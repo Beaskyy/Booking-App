@@ -1,11 +1,18 @@
 import React from "react";
 import Home from "./pages/home/Home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import List from "./pages/list/List";
+import Hotel from "./pages/hotel/Hotel";
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/hotels" element={<List />} />
+        <Route path="/hotel/:id" element={<Hotel />} />
+      </Routes>
+    </Router>
   );
 }
 
